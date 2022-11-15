@@ -40,9 +40,10 @@ body    {
 }
 
 .content   {
-    background-color: var(--color-gray);
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 2fr clamp(100px, 40%, 340px);
+    padding: 0 20px;
+    gap: 20px;
 }
 
 .project    {
@@ -51,7 +52,7 @@ body    {
     background-color: blueviolet;
 }
 
-/* ELEMENTS */
+/* SIDEBAR */
 
 ul  {
     padding: 0;
@@ -68,13 +69,12 @@ a   {
     height: 100%;
 }
 
-.link > a:hover {
-    color: white;
-    font-size: 1.3em;
+.link > a   {
+    color: var(--color-white);
 }
 
-a:visited    {
-    color: white;
+.link > a:hover {
+    font-size: 1.3em;
 }
 
 .link   {
@@ -107,6 +107,8 @@ li  {
     align-self: flex-end;
 }
 
+/* -------------------- HEADER -------------------- */
+
 #profile-picture    {
     height: 50px;
     border-radius: 50%;
@@ -124,6 +126,12 @@ li  {
 #search {
     height: 20px;
     margin-right: 10px;
+    border-color: var(--color-blue);
+}
+
+#search:focus   {
+    border: 3px solid var(--color-blue);
+    padding-left: 10px;
 }
 
 input   {
@@ -182,20 +190,21 @@ input   {
 }
 
 button  {
+    cursor: pointer;
     width: 120px;
     height: 30px;
     border-radius: 20px;
     background-color: var(--color-green);
-    color: rgb(245, 255, 245);
+    color: var(--color-white);
     font-weight: bold;
 }
 
-.content   {
-    display: grid;
-    grid-template-columns: 2fr clamp(100px, 40%, 340px);
-    padding: 0 20px;
-    gap: 20px;
+button:hover    {
+    background-color: var(--color-white);
+    color: var(--color-green);
 }
+
+/* -------------------- CONTENT -------------------- */
 
 .projects   {
     display: grid;
@@ -263,11 +272,6 @@ h4  {
     gap: 10px;
 }
 
-
-.trending   {
-    margin-bottom: 50px;
-}
-
 .cat-profile {
     height: 60px;
     padding: 10px 0 10px 10px;
@@ -292,4 +296,8 @@ h4  {
 
 .description > p   {
     margin: 0;
+}
+
+.trending   {
+    padding-bottom: 20px;
 }
